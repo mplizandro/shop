@@ -1,0 +1,32 @@
+# --- Java & Maven ---
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# --- Eclipse Specific ---
+.settings/
+.project
+.classpath
+.factorypath
+.metadata/
+bin/
+*.launch
+
+# --- Docker ---
+.docker/
+docker-compose.override.yml
+# Si usas bases de datos en Docker, ignora las carpetas de datos persistentes
+mysql_data/
+postgres_data/
+
+# --- IDEs adicionales (por si alguien usa VS Code o IntelliJ) ---
+.idea/
+*.iml
+.vscode/
+
+# --- Logs & OS ---
+*.log
+.DS_Store
+Thumbs.db

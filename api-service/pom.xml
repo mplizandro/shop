@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.samadai.shop</groupId>
-	<artifactId>shop</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>shop</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>shop-api-core</artifactId>
+	<version>0.0.1</version>
+	<name>Shop API Service</name>
+	<description>Servicio REST para la gestion de una tienda</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -67,6 +67,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>shop-api-core</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

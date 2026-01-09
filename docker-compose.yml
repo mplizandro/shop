@@ -1,0 +1,29 @@
+services:
+    api-shop: #nombre de la app establecido en application.properties
+        build: api-service #nombre de la carpeta donde está el Dockefile
+        mem_limit: 512m
+        ports:
+            - "8080:8080"
+        environment:
+            DB_URL: jdbc:mysql://server_db:3306/shop_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+            DB_USERNAME: root
+            DB_PASSWORD: 1234
+        restart: always
+        depends_on:
+            server_db:
+                condition: service_healthy
+    server_db: #configuraciones de base de datos dockerizada
+        image: mysql:9.5.0 #misma version que esté en el pom
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_PASSWORD: 1234
+            MYSQL_DATABASE: shop_db
+        restart: always
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+            interval: 1m30s
+            timeout: 10s
+            retries: 10
+            start_period: 30s

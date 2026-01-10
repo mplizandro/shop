@@ -4,7 +4,9 @@ target/
 *.war
 *.ear
 *.class
-
+# H2 DB disco store
+h2-persistence/
+*.db
 # --- Eclipse Specific ---
 .settings/
 .project
